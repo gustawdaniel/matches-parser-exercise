@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm test
-    - run: apt install shunit2 jq
+    - run: sudo apt install shunit2 jq
     - run: ./e2e.sh
 
   coverage:
