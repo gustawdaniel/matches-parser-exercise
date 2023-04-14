@@ -28,6 +28,6 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: npm test
-      if: !startsWith(matrix.node-version, '12.')
+      if: startsWith(matrix.node-version, '14.') || startsWith(matrix.node-version, '16.') || startsWith(matrix.node-version, '18.')
     - run: sudo apt install shunit2 jq
     - run: ./e2e.sh
