@@ -1,0 +1,25 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "- You have to refactor code in app.js file. Change it, split it, improve it, do it your own way! - You can use version of node you prefer - Code was tested in node 6, 10, 12, 14, 16, so it should be quite version agnostic at this stage - Application should print out the array of parsed events:",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "run": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.11",
+    "esbuild-jest": "^0.5.0",
+    "jest": "^29.5.0",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.6",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
+}
