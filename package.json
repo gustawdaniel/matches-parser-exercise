@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "run": "tsx src/index.ts"
+    "run": "tsx src/index.ts",
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --target=node14 --sourcemap --external:zod"
   },
   "keywords": [],
   "author": "",
