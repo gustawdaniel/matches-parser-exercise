@@ -30,8 +30,3 @@ jobs:
     - run: sudo apt install shunit2 jq
     - run: ./e2e.sh
 
-  coverage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ArtiomTr/jest-coverage-report-action@v2
