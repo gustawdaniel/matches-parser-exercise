@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [10.x, 12.x, 14.x, 16.x, 18.x]
+        node-version: [12.x, 14.x, 16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -28,7 +28,6 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: npm test
-      if: startsWith(matrix.node-version, '14.') || startsWith(matrix.node-version, '16.') || startsWith(matrix.node-version, '18.')
+      unless: startsWith(matrix.node-version, '12.')
     - run: sudo apt install shunit2 jq
     - run: ./e2e.sh
-
