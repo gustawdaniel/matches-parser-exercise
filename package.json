@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "- You have to refactor code in app.js file. Change it, split it, improve it, do it your own way! - You can use version of node you prefer - Code was tested in node 6, 10, 12, 14, 16, so it should be quite version agnostic at this stage - Application should print out the array of parsed events:",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "start": "tsx src/index.ts",
-    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --target=node14 --sourcemap --external:zod"
+    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --target=node14 --format=esm --sourcemap --external:zod"
   },
   "keywords": [],
   "author": "",

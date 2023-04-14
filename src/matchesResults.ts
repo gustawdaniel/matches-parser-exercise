@@ -1,19 +1,20 @@
 import {z} from "zod";
-import {EventParser} from "./EventParser";
+import {EventParser, EventParserConfig} from "./EventParser";
 
-interface MatchResult {
+export interface MatchResult {
     name: string;
     score: string;
 }
 
-export function playsResults(unknownMatches: unknown): MatchResult[] {
+export function matchesResults(unknownMatches: unknown, config?: EventParserConfig): MatchResult[] {
     const matches = z.array(z.unknown()).safeParse(unknownMatches);
     if(!matches.success) { return []; }
+    const parser = new EventParser(config || {});
     return matches.data.map(match => {
         try {
             return {
-                name: EventParser.makeEventName(match),
-                score: EventParser.formatScore(match)
+                name: parser.makeEventName(match),
+                score: parser.formatScore(match)
             }
         } catch (e) {
             // Silent fail
