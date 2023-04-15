@@ -12,10 +12,7 @@ export function matchesResults(unknownMatches: unknown, config?: EventParserConf
     const parser = new EventParser(config || {});
     return matches.data.map(match => {
         try {
-            return {
-                name: parser.makeEventName(match),
-                score: parser.formatScore(match)
-            }
+            return parser.format(match)
         } catch (e) {
             // Silent fail
             return null;
